@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #111;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            border: 2px solid #555;
+            padding: 10px;
+        }
+
+        header {
+            border: 2px solid #555;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .site-title {
+            border: 2px solid #555;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            border: 2px solid #555;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: underline;
+            margin: 0 12px;
+        }
+
+        /* Main Layout */
+        .main {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 0.8fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .box {
+            border: 2px solid #555;
+            padding: 12px;
+        }
+
+        /* Left Section */
+        .heading-box {
+            margin-bottom: 10px;
+        }
+
+        .heading-box h2 {
+            margin: 8px 0;
+            font-size: 22px;
+        }
+
+        .line {
+            border-bottom: 2px solid #777;
+            margin: 10px 0;
+        }
+
+        .article h2 {
+            margin: 5px 0;
+            font-size: 22px;
+        }
+
+        .article-info {
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .article p {
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+       
+        form h3 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #777;
+        }
+
+        .date-inputs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .date-inputs input {
+            width: 50%;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 18px;
+            border: 2px solid #555;
+            background: white;
+            cursor: pointer;
+        }
+
+        
+        .sidebar h3 {
+            margin-top: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: black;
+            margin: 10px 0;
+            text-decoration: underline;
+        }
+
+        
+        footer {
+            border: 2px solid #555;
+            margin-top: 10px;
+            padding: 12px;
+        }
+
+        .footer-nav {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav a {
+            color: black;
+            margin: 0 10px;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+
+            nav a,
+            .footer-nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="site-title">
+            [SITE TITLE]
+        </div>
+
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">Articles</a> |
+            <a href="#">Resources</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- LEFT COLUMN -->
+        <section>
+
+            <div class="box heading-box">
+                <small>&lt;section class="hero"&gt;</small>
+
+                <h2>Heading line</h2>
+
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+
+            <article class="box article">
+
+                <small>&lt;article&gt;</small>
+
+                <h2>Title title</h2>
+
+                <div class="article-info">
+                    Wed | Jan | 14 May 2025
+                </div>
+
+                <p>
+                    Body text 1
+                </p>
+
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+
+            </article>
+
+        </section>
+
+
+       
+        <section class="box">
+
+            <small>&lt;form action="/search"&gt;</small>
+
+            <h3>Filter Form</h3>
+
+            <form>
+
+                <label for="keyword">
+                    Keyword
+                </label>
+
+                <input
+                    type="text"
+                    id="keyword"
+                    name="keyword"
+                >
+
+
+                <label for="filter">
+                    Filter By:
+                </label>
+
+                <select id="filter" name="filter">
+                    <option>Select</option>
+                    <option>Category</option>
+                    <option>Date</option>
+                    <option>Author</option>
+                </select>
+
+
+                <label>
+                    Date:
+                </label>
+
+                <div class="date-inputs">
+
+                    <input
+                        type="text"
+                        placeholder="Start"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="End"
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    SEARCH
+                </button>
+
+            </form>
+
+        </section>
+
+
+       
+        <aside class="box sidebar">
+
+            <small>&lt;aside&gt;</small>
+
+            <h3>Utilities</h3>
+
+            <a href="#">Articles</a>
+            <a href="#">Resources</a>
+            <a href="#">About</a>
+            <a href="#">Links</a>
+
+        </aside>
+
+    </main>
+
+
+   
+    <footer>
+
+        <div class="footer-nav">
+
+            <a href="#">Home</a> |
+            <a href="#">Articles</a> |
+            <a href="#">Resources</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+
+        </div>
+
+        <div class="copyright">
+            ©️ 2025 Website Services | Terms | Privacy Policy
+        </div>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
