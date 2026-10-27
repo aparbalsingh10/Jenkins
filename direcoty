@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Pull Code') {
+            steps {
+                checkout scm
+                echo 'Code pulled successfully!'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Build successful!'
+                sh 'ls -la'
+            }
+        }
+    }
+}
